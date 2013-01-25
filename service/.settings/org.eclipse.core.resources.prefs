@@ -1,0 +1,8 @@
+eclipse.preferences.version=1
+encoding//config/autoload/development.config.php=UTF-8
+encoding//module/Service/src/Service/Controller/BrandsController.php=UTF-8
+encoding//module/Service/view/error/404.phtml=UTF-8
+encoding//module/Service/view/error/index.phtml=UTF-8
+encoding//module/Service/view/layout/breadcrumb.phtml=UTF-8
+encoding//module/Service/view/layout/logo_bar.phtml=UTF-8
+encoding//module/Service/view/layout/menu_bar.phtml=UTF-8

@@ -1,0 +1,96 @@
+<div class="grid_16">
+    <div class="page-header">
+        <h2>Service Order <small>|</small> <small>Create New Service Order</small></h2>
+    </div>
+</div>
+<div class="span12" style="margin-bottom: 20px;">
+    <?php
+        echo $this->message;
+    ?>
+    <br />
+    <?php 
+        $form = $this->form;
+        $form->setAttribute('action', $this->url('user', array('action' => 'login')));
+        $form->prepare();
+        
+        echo $this->form()->openTag($form);
+        ?>
+        <fieldset>
+        Customer
+        <table>
+            <tr>
+                <td>
+                    <?php echo $this->formRow($form->get('customer-name')); ?>
+                </td>
+                <td>
+                    <?php echo $this->formRow($form->get('customer-email')); ?>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <?php echo $this->formRow($form->get('customer-phone')); ?>
+                </td>
+                <td>
+                    <?php echo $this->formRow($form->get('customer-mobile')); ?>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <?php echo $this->formRow($form->get('customer-address')); ?>
+                </td>
+            </tr>
+        </table>    
+        </fieldset>    
+        <fieldset>
+        Product
+        <table>
+            <tr>
+                <td>
+                    <?php echo $this->formRow($form->get('product-description')); ?>
+                </td>
+                <td>
+                    <?php echo $this->formRow($form->get('product-voltage')); ?>
+                </td>
+                <td>
+                    <?php echo $this->formRow($form->get('product-serial-number')); ?>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <?php echo $this->formRow($form->get('brand-name')); ?>
+                </td>
+                <td colspan="2">
+                    <?php echo $this->formRow($form->get('reported-problem-description')); ?>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <?php echo $this->formRow($form->get('buy-date')); ?>
+                </td>
+                <td>
+                    <?php echo $this->formRow($form->get('buy-store-name')); ?>
+                </td>
+                <td>
+                    <?php echo $this->formRow($form->get('buy-invoice-number')); ?>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+                <td>
+                    <?php echo $this->formSubmit($form->get('submit')); ?>
+                </td>
+            </tr>
+            
+        </table>    
+        </fieldset>    
+        <?php
+        echo $this->form()->closeTag();
+        ?>
+</div> 
+
+

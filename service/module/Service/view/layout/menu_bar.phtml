@@ -1,0 +1,29 @@
+				<div id="nav_top" class="dropdown_menu clearfix round_top">
+					<ul class="clearfix">
+						<!-- a class="brand" href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Skeleton Application') ?></a -->
+						<li><a href="<?php echo $this->url('home') ?>"><img src="<?php echo $this->layout()->cache_s3['images'];?>/icons/small/grey/laptop.png"/><span><?php echo $this->translate('Dashboard') ?></span></a></li>
+						<li><a href="#"><img src="<?php echo $this->layout()->cache_s3['images'];?>/icons/small/grey/list.png"/><span><?php echo $this->translate('Entries') ?></span></a>
+							<ul>
+								<li><a href="/brands"><span><?php echo $this->translate('Brands') ?></span></a></li>
+							</ul>
+						</li>
+						<li><a href="#"><img src="<?php echo $this->layout()->cache_s3['images'];?>/icons/small/grey/list.png"/><span><?php echo $this->translate('Service Orders') ?></span></a>
+							<ul>
+								<li><a href="/service_orders/new"><span><?php echo $this->translate('Add Service Order') ?></span></a></li>
+								<li><a href="/service_orders/"><span><?php echo $this->translate('List Service Orders') ?></span></a></li>
+							</ul>
+						</li>
+						<li><a href="#"><img src="<?php echo $this->layout()->cache_s3['images'];?>/icons/small/grey/list.png"/><span><?php echo $this->translate('Finance') ?></span></a>
+							<ul>
+								<li><a href="finance/cash_flow"><span><?php echo $this->translate('Cash flow') ?></span></a></li>
+								<li><a href="finance/accounts_receivable"><span><?php echo $this->translate('Accounts receivable') ?></span></a></li>
+								<li><a href="finance/extracts"><span><?php echo $this->translate('Extracts') ?></span></a></li>
+							</ul>
+						</li>
+						<li><a href="users"><img src="<?php echo $this->layout()->cache_s3['images'];?>/icons/small/grey/laptop.png"/><span><?php echo $this->translate('Users') ?></span></a></li>
+					</ul>
+					<div id="mobile_nav">
+						<div class="main"></div>
+						<div class="side"></div>
+					</div>
+				</div>

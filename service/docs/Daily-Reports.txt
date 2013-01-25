@@ -1,0 +1,21 @@
+
+Login Authentications
+{
+"email": "john@hotmail.com" ,
+"password": "$2k8djE/cGayw"
+}
+
+{"email":"john@hotmail.com","user_token":"acf200b99a5abd4135070a701ed211a0","kdb_company_id":"034aa25a207553db3081bf155c112ae9"}
+
+{"email":"john@hotmail.com","user_token":"b9207c9546fb6412cc839e1e2171b62d","kdb_company_id":"034aa25a207553db3081bf155c112ae9"}
+
+Subject : Daily Updates for -December-2012 (Wed)
+Dear Tulio,
+
+Please find below updates of the day
+
+1. Service Order API  : Worked on Service Order API integration, faces service Id issue in API [ In process - 240 Min]
+2. Login page Design Integraion : Worked on Design changes of Login page [ In Process - 210 Min]
+3. Communication : Communicate with client        [ 30 Min ]
+
+Total spent Hours : 8 hours

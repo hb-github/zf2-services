@@ -1,0 +1,24 @@
+<div class="grid_16">
+    <div class="page-header">
+        <h2>Cadastro de marcas <small>|</small> <small>Cadastro de marcas</small></h2>
+    </div>
+</div>
+<div class="span12" style="margin-bottom: 20px;">
+    <?php
+    echo $this->message;
+    ?>
+    <br />
+    <?php 
+        $form = $this->form;
+        $form->setAttribute('action', $this->url('brands', array('action' => 'add')));
+        $form->prepare();
+        
+        echo $this->form()->openTag($form);
+        echo $this->formRow($form->get('brand'));
+        echo $this->formRow($form->get('telecontrol_id'));
+        echo $this->formSubmit($form->get('submit'));
+        echo $this->form()->closeTag();
+    ?>    
+</div> 
+
+

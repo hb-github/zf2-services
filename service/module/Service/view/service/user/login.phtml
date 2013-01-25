@@ -1,0 +1,30 @@
+<div id="main_container" class="main_container container_16 clearfix">
+                            <div class="box">
+							<div class="block">
+								<div class="section">
+									<div class="alert dismissible alert_light">
+										<img width="24" height="24" src="<?php echo $this->layout()->cache_s3['images'];?>/icons/small/grey/locked.png">
+										<strong>Welcome to Adminica.</strong> Please enter your details to login.
+									</div>
+								</div>
+
+       <form id="user" name="user" method="post" action="<?php echo $this->url('user', array('action' => 'login'));?>">        
+		<fieldset class="label_side top">
+        <label for="username_field"><span>Email Address</label>
+        <div>
+			<input id="username_field" type="text" value="" name="email">
+		</div>
+		</fieldset>	
+        <fieldset class="label_side bottom">                                                          
+        <label for="password_field"><span>Password</span></label>
+        <div>
+        <input type="password" value="" name="password">
+        </div>
+        </fieldset>
+        <div class="button_bar clearfix">                                                    
+        <input type="submit" value="Gravar" name="submit">        </div>
+        </form> 
+
+        </div>
+    </div>
+</div>                                                            

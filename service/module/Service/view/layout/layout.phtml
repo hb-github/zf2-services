@@ -1,0 +1,78 @@
+<?php echo $this->doctype(); ?>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <?php echo $this->headTitle($this->translate('Service Application'))->setSeparator(' - ')->setAutoEscape(false) ?>
+
+    <?php echo $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0') ?>
+
+    <!-- Le styles -->
+    <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->layout()->cache_s3['images'] . '/favicon.ico'))
+                    ->prependStylesheet(array('rel' => 'stylesheet/less', 'type' => 'text/css', 'href'=>$this->layout()->cache_s3['css'] . '/themes/bg_noise.less'))
+                    //->prependStylesheet($this->layout()->cache_s3['css'] . '/themes/theme_navy.css')
+                    ->prependStylesheet($this->layout()->cache_s3['css'] . '/themes/nav_top.css')
+                    ->prependStylesheet($this->layout()->cache_s3['bootstrap'] . '/css/bootstrap-responsive.css')
+                    ->prependStylesheet($this->layout()->cache_s3['bootstrap'] . '/css/bootstrap.css')
+                    ->prependStylesheet($this->layout()->cache_s3['css'] . '/adminica/mobile.css')
+                    ->prependStylesheet($this->layout()->cache_s3['css'] . '/adminica/grid.css')
+                    ->prependStylesheet($this->layout()->cache_s3['css'] . '/adminica/main.css')
+                    ->prependStylesheet('http://fonts.googleapis.com/css?family=Open+Sans:400,700') ?>
+
+    <!-- Scripts -->
+    <?php echo $this->headScript()
+                    ->prependFile($this->layout()->cache_s3['js'] . '/less/less.js')
+                    ->prependFile($this->layout()->cache_s3['js'] . '/adminica/adminica_load.js')
+                    ->prependFile($this->layout()->cache_s3['js'] . '/adminica/adminica_mobile.js')
+                    ->prependFile($this->layout()->cache_s3['js'] . '/adminica/adminica_ui.js')
+                    ->prependFile($this->layout()->cache_s3['bootstrap'] . '/js/bootstrap.js')
+                    ->prependFile($this->layout()->cache_s3['js'] . '/adminica/prefixfree/prefixfree.js')
+                    ->prependFile($this->layout()->cache_s3['js'] . '/jquery/jqueryui-min.js')
+                    ->prependFile($this->layout()->cache_s3['js'] . '/jquery/jquery-min.js') ?>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+      This is default Layout ... 
+	<div id="pjax">
+		<div id="wrapper" data-adminica-nav-top="1" data-adminica-side-top="1" class="has_fixed_bar">
+		
+		<!-- <BARRA KADABRA> -->
+        <?php echo $this->render('layout/top_bar'); ?>
+		
+		<!-- <BARRA LOGO E CAIXA DE IDENTIFICAÇÃO DO USUÁRIO> -->
+        <?php echo $this->render('layout/logo_bar'); ?>
+        
+			<div id="main_container" class="main_container container_16 clearfix">
+			
+				<!-- <MENU> -->
+                <?php echo $this->render('layout/menu_bar'); ?>
+                
+				<!-- <BREADCRUMB> -->
+                <?php //echo $this->render('layout/breadcrumb'); ?>
+                
+				<?php echo $this->content; ?>
+			</div>
+
+			<footer>
+				<p>&copy; 2012 <?php echo $this->translate('All rights reserved.') ?></p>
+			</footer>
+			
+		</div>
+		
+	 
+		<div id="loading_overlay">
+			<div class="loading_message round_bottom">
+				<img src="<?php echo $this->layout()->cache_s3['images'];?>/interface/loading.gif" alt="<?php echo $this->translate('loading') ?>" />
+			</div>
+		</div>
+	</div>
+	
+	<?php echo $this->inlineScript() ?>
+
+  </body>
+</html>

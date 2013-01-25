@@ -1,0 +1,12 @@
+/nbproject/private/
+/nbproject
+/vendor
+*/vendor/*
+local.php
+composer.lock
+config/autoload/local.php
+/config/autoload/local.php
+nbproject/
+config/config.php
+composer.lock
+*/local.php

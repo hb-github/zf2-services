@@ -1,0 +1,17 @@
+{
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://packages.zendframework.com/"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.4",
+        "phly/phlyty": "1.0.*",
+        "zendframework/zendframework": "2.0.*"
+    },
+    "autoload": {
+        "psr-0": {"": "library/"}
+    }
+}

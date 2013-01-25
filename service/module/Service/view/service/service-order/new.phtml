@@ -1,0 +1,129 @@
+<div class="grid_16">
+    <div class="page-header">
+        <h2>Service Order <small>|</small> <small>Create New Service Order</small></h2>
+    </div>
+</div>
+<div class="span12" style="margin-bottom: 20px;">
+    <?php
+        echo $this->message;
+    ?>
+    <br />
+    <?php 
+        $form = $this->form;
+       $form->setAttribute('action', $this->url('service_orders', array('action' => 'new')));
+        $form->prepare();
+        
+        echo $this->form()->openTag($form);
+        ?>
+        
+        <h2>Customer</h2>
+        <span float="right">
+            <div id="service-order-id" style="display:none"></div>
+        </span>
+        <fieldset>
+        <input type="hidden" id ="serviceOrderId" name="serviceOrderId" value="" />
+        <table style="border:solid 1px #999;width:95%;" cellpadding="5" >
+            <tr>
+                <td>
+                    <?php echo $this->formRow($form->get('customer_name')); ?>
+                </td>
+                <td>
+                    <?php echo $this->formRow($form->get('customer_email')); ?>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <?php echo $this->formRow($form->get('customer_phone')); ?>
+                </td>
+                <td>
+                    <?php echo $this->formRow($form->get('customer_mobile')); ?>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <?php echo $this->formRow($form->get('customer_address')); ?>
+                </td>
+            </tr>
+        </table>    
+        </fieldset>    
+        <h2>Product</h2>
+        <fieldset>
+        <table style="border:solid 1px #999;width:95%;" cellpadding="5" >
+            <tr>
+                <td>
+                    <?php echo $this->formRow($form->get('product_description')); ?>
+                </td>
+                <td>
+                    <?php echo $this->formRow($form->get('product_voltage')); ?>
+                </td>
+                <td>
+                    <?php echo $this->formRow($form->get('product_serial_number')); ?>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <?php echo $this->formRow($form->get('brand_name')); ?>
+                </td>
+                <td colspan="2">
+                    <?php echo $this->formRow($form->get('reported_problem_description')); ?>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <?php echo $this->formRow($form->get('buy_date')); ?>
+                </td>
+                <td>
+                    <?php echo $this->formRow($form->get('buy_store_name')); ?>
+                </td>
+                <td>
+                    <?php echo $this->formRow($form->get('buy_invoice_number')); ?>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+                <td>
+                    <?php echo $this->formSubmit($form->get('submit')); ?>
+                </td>
+            </tr>
+            
+        </table>    
+        </fieldset>    
+        <?php
+        echo $this->form()->closeTag();
+        ?>
+</div> 
+<script language="javascript">
+    
+       
+    $("#customer_name").blur(function() {
+        customerName = $("#customer_name").val();
+        
+        $.post('neworder', {customer_name: customerName}, function(data) {
+            var obj = JSON.parse(data);
+            htmlCont = "Service Order # " +obj['service-order-id'];
+            $("#service-order-id").html(htmlCont);
+            $('#serviceOrderId').val(obj['service-order-id']);
+            $('#service-order-id').show();  
+         });
+        /*
+        $.post("neworder", null,
+            function(data){
+                alert(data.response);
+                if(data.response == true){
+                    $stickynote.before("<div class=\"sticky-note\"><textarea id=\"stickynote-"+data.new_note_id+"\"></textarea><a href=\"#\" id=\"remove-"+data.new_note_id+"\"class=\"delete-sticky\">X</a></div>");
+                // print success message
+                } else {
+                    // print error message
+                    console.log('could not add');
+                } 
+            }); */
+        
+    });
+    
+</script>
+

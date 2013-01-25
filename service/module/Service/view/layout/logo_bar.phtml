@@ -1,0 +1,12 @@
+			<div id="topbar" class="clearfix">
+				<a href="<?php echo $this->url('home') ?>" class="logo"><span><?php echo $this->translate('Service') ?></span></a>
+				<div class="user_box dark_box clearfix">
+					<img src="<?php echo $this->layout()->cache_s3['profile'];?>/profile.png" width="55" alt="Profile Pic" />
+					<h2>Grupo do usuário</h2>
+					<h3>Nome do usuário</h3>
+					<ul>
+						<li><a href="user/profile"><?php echo $this->translate('profile') ?></a><span class="divider">|</span></li>
+						<li><a href="user/settings"><?php echo $this->translate('settings') ?></a><span class="divider">|</span></li>
+					</ul>
+				</div>
+			</div>
